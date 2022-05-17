@@ -30,5 +30,5 @@ class HomeView(View):
 
 class LogoutView(View):
     def get(self, request):
-        del request.session['username']
+        request.session.flush()
         return redirect('login')
